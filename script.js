@@ -1,3 +1,4 @@
+// main.js
 document.addEventListener("DOMContentLoaded", () => {
   // Toggle 'Read More' in About Section
   const readMoreBtn = document.querySelector(".btn-read");
@@ -6,7 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
   if (readMoreBtn && moreText) {
     readMoreBtn.addEventListener("click", (e) => {
       e.preventDefault();
-
       const isHidden = moreText.style.display === "none" || moreText.style.display === "";
       moreText.style.display = isHidden ? "inline" : "none";
       readMoreBtn.textContent = isHidden ? "Read Less..." : "Read More...";
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Contact Form Validation + Fetch API Submission
+  // Contact Form Validation + Submission
   const form = document.querySelector(".contact-form");
 
   if (form) {
@@ -60,6 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         if (res.ok) {
+          // Redirect to thank you page
           window.location.href = "thankyou.html";
         } else {
           const errorMsg = await res.text();
