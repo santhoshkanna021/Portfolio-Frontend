@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const data = { name, email, phone, subject, message };
 
       try {
-        const res = await fetch("https://portfolio-backend-xi-dusky.vercel.app/", {
+        const res = await fetch("https://portfolio-backend-xi-dusky.vercel.app/api/contact", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
