@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // ✅ Toggle 'Read More' in About Section
+  // Toggle 'Read More' in About Section
   const readMoreBtn = document.querySelector(".btn-read");
   const moreText = document.getElementById("more-text");
 
@@ -8,13 +8,12 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
 
       const isHidden = moreText.style.display === "none" || moreText.style.display === "";
-
       moreText.style.display = isHidden ? "inline" : "none";
       readMoreBtn.textContent = isHidden ? "Read Less..." : "Read More...";
     });
   }
 
-  // ✅ Smooth Scroll for internal anchor links
+  // Smooth Scroll for internal anchor links
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", (e) => {
       const targetId = anchor.getAttribute("href");
@@ -30,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // ✅ Contact Form Validation + Fetch API Submission
+  // Contact Form Validation + Fetch API Submission
   const form = document.querySelector(".contact-form");
 
   if (form) {
@@ -52,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const data = { name, email, phone, subject, message };
 
       try {
-        const res = await fetch("https://portfolio-backend-alpha-blue.vercel.app/", {
+        const res = await fetch("https://portfolio-backend-alpha-blue.vercel.app/api/contact", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
